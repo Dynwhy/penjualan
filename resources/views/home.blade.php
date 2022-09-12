@@ -8,19 +8,19 @@
 <div class="container text-center">
   <div class="row g-2 text-center">
     <div class="col-6">
-      <div class="p-3 border bg-primary mt-3">10 Barang 
+      <div class="p-3 border bg-primary mt-3">50 Barang 
         <i class="fa fa-boxes"></i>
         </div>
     </div>
 
     <div class="col-6">
-      <div class="p-3 border bg-success mt-3">15 Kategori 
+      <div class="p-3 border bg-success mt-3">5 Kategori 
         <i class="fa fa-tag"></i>
         </div>
     </div>
 
     <div class="col-6">
-      <div class="p-3 border bg-light mt-3">5 Supplier 
+      <div class="p-3 border bg-light mt-3">10 Supplier 
         <i class="fa fa-truck"></i>
         </div>
     </div>

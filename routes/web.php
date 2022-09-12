@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    KategoriController,
+    BarangController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +20,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/barang', function () {
-    return view('barang.index');
-});
-Route::get('/kategori', function () {
-    return view('kategori.index');
-});
+Route::resource('/barang', BarangController::class);
+Route::get('/barang/{id}/edit', [ BarangController::class, 'edit']);
+Route::get('/barang/{id}/hapus', [ BarangController::class, 'destroy']);
+
+Route::resource('/kategori', KategoriController::class);
+Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit']);
+Route::get('/kategori/hapus/{id}', [KategoriController::class, 'destroy']);
+
 Route::get('/pembeli', function () {
     return view('pembeli.index');
 });

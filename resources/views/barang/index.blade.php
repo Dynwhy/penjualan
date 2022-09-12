@@ -10,7 +10,10 @@
         <div class="card-title">
             <h5>Data Barang</h5>
 
-            <button type="buttom" class="btn btn-success btn-sm float-end" data-bs-toggle="modal" data-bs-target=#ModalTambah><i class="fa fa-plus"></i></button>
+            <a type="button"
+             class="btn btn-success btn-sm float-end" 
+             href="{{route('barang.create')}}">
+             <i class="fa fa-plus"></i></a>
         </div>
     </div>
 
@@ -28,19 +31,21 @@
         </tr>
      </thead>
 <tbody>
+     @foreach($barang as $item)
      <tr>
-        <td>1.</td>
-        <td>Kursi</td>
-        <td>50.000</td>
-        <td>10</td>
-        <td>Mediatek</td>
-        <td>ATK</td>
+        <td>{{$loop->iteration}}</td>
+        <td>{{$item->nama}}</td>
+        <td>{{$item->harga}}</td>
+        <td>{{$item->stok}}</td>
+        <td>{{$item->suplier->nama}}</td>
+        <td>{{$item->kategori->nama}}</td>
         <td>
-            <a href="#" class="btn btn-warning btn-bg"><i class="fa-solid fa-edit"></i></a>
+            <a href="/barang/{{$item->id}}/edit" class="btn btn-warning btn-bg"><i class="fa-solid fa-edit"></i></a>
             |
-            <a href="#" class="btn btn-danger btn-bg"><i class="fa-solid fa-trash"></i></a>
+            <a href="/barang/{{$item->id}}/hapus" class="btn btn-danger btn-bg"><i class="fa-solid fa-trash"></i></a>
         </td>
      </tr>
+     @endforeach
 </tbody>
 </table>
     </div>
@@ -50,15 +55,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Barang</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary">Simpan</button>
       </div>
     </div>
   </div>
