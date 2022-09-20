@@ -16,7 +16,7 @@ Barang
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="nama">Nama Barang</label>
+                                <label for="nama"> Barang</label>
                                 <input type="text" name="nama" value="{{old('nama')}}"
                                     class="form-control @error('nama') is-invalid @enderror">
                                 @error('nama')

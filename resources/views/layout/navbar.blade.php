@@ -13,7 +13,7 @@
           <a class="nav-link" href="/kategori">Kategori</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/suppliyer">Suppliyer</a>
+          <a class="nav-link" href="/suplier">Supliyer</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pembeli">Pembeli</a>

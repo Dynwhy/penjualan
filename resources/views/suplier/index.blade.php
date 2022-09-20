@@ -1,46 +1,47 @@
 @extends('layout.app')
 
 @section('title')
- Pembeli
-@endsection 
+Suplier
+@endsection
 
 @section('Content')
 <div class="card mt-3">
     <div class="card-header">
         <div class="card-title">
-            <h5>Data Pembeli</h5>
+            <h5>Data Suplier</h5>
 
-            <button type="buttom" class="btn btn-success btn-sm float-end" data-bs-toggle="modal" data-bs-target=#ModalTambah><i class="fa fa-plus"></i></button>
+            <button type="buttom" class="btn btn-success btn-sm float-end" data-bs-toggle="modal"
+                data-bs-target=#ModalTambah><i class="fa fa-plus"></i></button>
         </div>
     </div>
 
     <div class="card-body">
-    <table class="table table-striped">
-     <thead>
-        <tr>
-            <th>No.</th>
-            <th>Nama</th>
-            <th>Telepon</th>
-            <th>Alamat</th>
-            <th>Aksi</th>
-        </tr>
-     </thead>
-<tbody>
-@foreach($pembeli as $item)
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th style="width: 5%">No.</th>
+                    <th>Nama</th>
+                    <th>Telepon</th>
+                    <th>Alamat</th>
+                    <th style="width: 20%">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($suplier as $item)
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->telepon}}</td>
                     <td>{{$item->alamat}}</td>
                     <td>
-                        <a href="/pembeli/edit/{{$item->id}}" class="btn btn-warning btn-bg"><i class="fa-solid fa-edit"></i></a>
+                        <a href="/suplier/edit/{{$item->id}}" class="btn btn-warning btn-bg"><i class="fa-solid fa-edit"></i></a>
                         |
-                        <a href="/pembeli/hapus/{{$item->id}}" class="btn btn-danger btn-bg"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/suplier/hapus/{{$item->id}}" class="btn btn-danger btn-bg"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach
-</tbody>
-</table>
+            </tbody>
+        </table>
     </div>
 </div>
 <!-- Modal -->
@@ -49,11 +50,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Pembeli</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Tambah Suplier</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{route('pembeli.store')}}" method="POST">
+                <form action="{{route('suplier.store')}}" method="POST">
                     @csrf
                     <div class="form-group mb-3">
                         <label for="nama">Nama</label>

@@ -25,7 +25,7 @@
             <th>Nama</th>
             <th>Harga</th>
             <th>Stok</th>
-            <th>Suppliyer_id</th>
+            <th>Supliyer_id</th>
             <th>Kategori_id</th>
             <th>Aksi</th>
         </tr>
@@ -37,8 +37,8 @@
         <td>{{$item->nama}}</td>
         <td>{{$item->harga}}</td>
         <td>{{$item->stok}}</td>
-        <td>{{$item->suplier->nama}}</td>
-        <td>{{$item->kategori->nama}}</td>
+        <td>{{! empty($item->suplier->nama) ? $item->suplier->nama : ''}}</td>
+        <td>{{! empty($item->kategori->nama) ? $item->kategori->nama : ''}}</td>
         <td>
             <a href="/barang/{{$item->id}}/edit" class="btn btn-warning btn-bg"><i class="fa-solid fa-edit"></i></a>
             |
@@ -55,11 +55,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Barang</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Tambah Barang</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
